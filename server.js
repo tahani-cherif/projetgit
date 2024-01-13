@@ -8,6 +8,8 @@ import { notFoundError, errorHandler } from './middlewares/error-handler.js';
 import PhdStudentRoutes from './routes/phdStudent.js';
 import conferenceRoutes from './routes/conference.js';
 import scientificPaperRoutes from './routes/scientificPaper.js';
+import menuRoutes from "./routes/menu.js";
+
 
 const app = express();
 const port = process.env.PORT || 9090;
@@ -35,6 +37,7 @@ app.use('/img', express.static('public/images'));
 app.use('/phd-students', PhdStudentRoutes);
 app.use('/conferences', conferenceRoutes);
 app.use('/scientific-papers', scientificPaperRoutes);
+app.use('/menus', menuRoutes);
 
 app.use(notFoundError);
 app.use(errorHandler);
